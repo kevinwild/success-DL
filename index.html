@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="extras/hover.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
             <button class="btn btn-block btn-success" onClick="start()">Are you ready? - Start Here</button>
         <div class="viewGithub">
             View on
-                <a href="">
+                <a href="https://github.com/kevinwild/success-DL" target="_blank">
                     <img class="text-center hvr-pulse" src="images/github.png" width="75px" height="inherit">
                 </a>
         </div>
@@ -31,8 +31,14 @@
     <!-- ...end Part 1 -->
     <!-- ............. -->
     <!-- Part 2 Start Here -->
-    <div id="part2"></div>
+    <div id="part2">
+            <h1 class="text-center">Welcome what is your name </h1>
+        <input type="text" name="userName" id="userName">
 
+        <button onclick="return userData()">Continue</button>
+
+
+    </div>
     <!-- ...end Part 2 -->
 
 </div><!-- ..end .container -->
