@@ -11,7 +11,11 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="extras/hover.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <style>
+        #continueNext {
+            margin-bottom: 25px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -19,7 +23,7 @@
     <!-- Part 1 Start Here -->
     <div id="startHere" align="center"><!-- eww ugly align="center" i know but hover library was giving me trouble -->
             <h1 class="introTitle hvr-wobble-top text-center">Success</h1>
-            <p class="text-center">by Kevin Wildermuth</p>
+        <p class="text-center">by <a href="http://kevinwildermuth.com" target="_blank" style="color: black;"> Kevin Wildermuth </a></p>
             <button class="btn btn-block btn-success" onClick="start()">Are you ready? - Start Here</button>
         <div class="viewGithub">
             View on
@@ -32,10 +36,12 @@
     <!-- ............. -->
     <!-- Part 2 Start Here -->
     <div id="part2">
-            <h1 class="text-center">Welcome what is your name </h1>
-        <input type="text" name="userName" id="userName">
 
-        <button onclick="return userData()">Continue</button>
+            <p id="successRepeat" class="largeText"></p>
+                <a href="pages/livingCost.html" id="continueNext" class="btn btn-success hvr-pulse-repeat">
+                    Successfully Continue
+                </a>
+
 
 
     </div>

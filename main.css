@@ -5,7 +5,9 @@ body {
 .introTitle {
     font-size: 900%;
 }
-
+.largeText {
+    font-size: 200%;
+}
 #part2{
     display: none;
 }

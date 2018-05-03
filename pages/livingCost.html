@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success is it Hard?</title>
+    <!-- ew im copying and pasting code this should be dynamic no time -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../extras/hover.css">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <style>
+        .clickIt {
+            width: 400px;
+            height:inherit;
+            position:fixed;
+
+        }
+        .centerImg {
+            margin: auto;
+            width: 50%;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container text-center" >
+    <h1>The cost of living</h1>
+    <h2>Rent is due, your toilet broke, and your stomach is growling.</h2>
+    <h3>Click to pay your way: $<span id="earnings">0.00</span> of $1200.</h3>
+
+</div>
+
+    <img src="../images/creditCard.png" id="cCard" class="hvr-skew-forward" onclick="creditClick()"
+         height="inherit" width="250"
+         style="position: absolute ;bottom:0px; right:0px; padding-right: 15px;"
+    />
+<img src="../images/penny.png" class='clickIt' onClick="addPenny()" />
+<div class="centerImg">
+    <img src="../images/check.png" class="cashMoney" width="650px" height="inherit" style="display:none;">
+</div>
+
+<a href="choosePath.html" class="btn btn-success btn-block" style="display: none">
+    Pay your way move on...
+</a>
+
+<a href="#" data-toggle="tooltip" title="Good thing you found me, knowledge is key to finding success. Here's a hint minimize the screen and make this easier"
+   style="position: absolute ;bottom:0px; left:0px; padding-bottom: 10px; padding-left: 15px;">| ? |
+</a>
+
+<script>
+    var earnings = 0;
+    $(document).ready(function(){
+        animateDiv();
+        $('[data-toggle="tooltip"]').tooltip();
+
+    });
+
+
+    function makeNewPosition(){
+
+        // Get viewport dimensions (remove the dimension of the div)
+        var h = $(window).height() - 50;
+        var w = $(window).width() - 50;
+
+        var nh = Math.floor(Math.random() * h);
+        var nw = Math.floor(Math.random() * w);
+
+        return [nh,nw];
+
+    }
+
+    function animateDiv(){
+        var newq = makeNewPosition();
+        $('.clickIt').animate({ top: newq[0], left: newq[1] }, function(){
+            animateDiv();
+        });
+    }
+
+    function addPenny(){
+        if(earnings == 0){
+            earnings++;
+            $('#earnings').text(0.01);
+            $('.clickIt').attr("src","../images/dollar.png");
+
+        }
+        else if(earnings == 1){
+            earnings++;
+            $('#earnings').text(1.01);
+            $('.clickIt').attr("src","../images/onehundred.png");
+
+
+        }
+        else if(earnings == 2){
+            earnings++;
+            $('#earnings').text(100.01);
+
+
+        }
+        else if(earnings == 3){
+            earnings++;
+            $('#earnings').text(200.01);
+
+
+        }
+        else if(earnings == 4){
+            earnings++;
+            $('#earnings').text(1801.01);
+            $('#earnings').css('color','green');
+            $('.clickIt').fadeOut();
+            $('#cCard').fadeOut();
+            $('.cashMoney').fadeIn();
+            $('.btn-success').fadeIn();
+
+
+        }
+    }
+    function creditClick(){
+       var choice = confirm("Being in debt seems to be the American way, although don't you need credit in today's world?" +
+           " are you sure you want to continue down that path?");
+        if (choice == true){
+            window.location.replace("choosePath.html");
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

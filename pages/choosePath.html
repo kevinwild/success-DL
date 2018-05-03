@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paths</title>
+    <!-- ew im copying and pasting code this should be dynamic no time -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../extras/hover.css">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js"></script>
+
+    <style>
+        #imageRow {
+            background-color: white;
+            padding: 25px;
+
+        }
+        .colOne {
+            border-right: 5px solid grey;
+        }
+        #part2{
+            display: none;
+        }
+        #part3{
+            display:none;
+        }
+        #part4 {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container text-center" >
+    <h1>What is success?</h1>
+    <!-- SUCCESS TABLE -->
+    <div class="row" id="imageRow">
+        <div class="col-sm-12">
+            <h3 class="text-center" id="clickChoose">click and choose</h3>
+        </div>
+
+
+   <!-- PART 1 -->
+        <div id="part1">
+            <div class="col-md-6" id="colOne">
+                <h1>Wealth</h1>
+                <img src="../images/moneyPile.jpg" height="200" width="inherit" id="moneyPile" onClick="handleChoices(0, 1)"/>
+            </div>
+            <div class="col-md-6" id="colTwo">
+                <h1>Time</h1>
+                <img src="../images/clock.gif" height="200" width="inherit" id="clock" onclick="handleChoices(1, 1)"/>
+            </div>
+        </div>
+
+    <!-- PART 2 -->
+    <div id="part2">
+        <div class="col-md-6" class="colOne">
+            <h1>All Business</h1>
+            <img src="../images/suite.png" height="200" width="inherit" id="family" onClick="handleChoices(0, 2)"/>
+        </div>
+        <div class="col-md-6" class="colTwo">
+            <h1>Some Business</h1>
+            <img src="../images/family.jpg" height="200" width="inherit" id="clock" onclick="handleChoices(1, 2)"/>
+        </div>
+    </div>
+        <!-- PART 3 -->
+        <div id="part3">
+            <div class="col-md-6" class="colOne">
+                <h1>Study</h1>
+                <img src="../images/graduate.png" height="200" width="inherit" id="graduate" onClick="handleChoices(0, 3)"/>
+            </div>
+            <div class="col-md-6" class="colTwo">
+                <h1>Work</h1>
+                <img src="../images/hands.jpg" height="200" width="inherit" id="hands" onclick="handleChoices(1, 3)"/>
+            </div>
+        </div>
+
+        <!-- PART 4 -->
+        <div id="part4">
+            <div class="col-md-12" class="colOne">
+                <h2 style="text-center">Success, an accomplishment of an aim or purpose</h2>
+                <h3>A loose definition to a popular term</h3>
+                <h4>What is your aim or purpose?</h4>
+                <hr>
+                <p style="padding-bottom: 50px;">
+                    <b>Success</b> requires balance<br>
+                    A sad rich man is no more <b>successful</b> then a happy poor man.  <br>
+                    <b>Success</b> can be given while some have to work hard for it. <br>
+                    Some take <b>success</b> for granted. <br>
+                    While others thrive for their moment in <b>success</b>.<br>
+                    Remember, determining <b>success</b> is up to you.
+
+
+                </p>
+
+                <a href="../index.html" class="btn btn-success btn-block">Return to beginning</a>
+
+            </div>
+
+        </div>
+
+</div>
+
+
+
+</div>
+
+<script>
+
+
+    successCount = 0;
+    function handleChoices(imgType, part){
+        var hideShow = '#part'+part;
+        $(hideShow).fadeOut();
+
+        part = part + 1;
+        hideShow = '#part'+part;
+        $(hideShow).delay(500).fadeIn();
+
+
+
+        if(imgType == 0){
+
+        }else {
+            successCount += 1;
+        }
+        if(part == 3){
+            $('#clickChoose').fadeOut();
+        }
+
+    }
+</script>
+
+
+
+
+</body>
+</html>
